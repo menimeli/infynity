@@ -1,0 +1,53 @@
+<table class="table">
+  <app-loader *ngIf="isLoading"></app-loader>
+    <thead>
+      <tr class="top">
+        <th>Bank code</th>
+        <th style="width:20%;">Display Name</th>
+        <th>Type</th>
+        <th colspan="3" style="text-align: center;">Comission</th>
+        <th style="width: 70px;">Balance Multipiler</th>
+        <th style="width: 70px;">Active</th>
+        <th style="width: 70px;">Hide</th>
+        <th style="width: 50px;">Edit</th>
+      </tr>
+    </thead>
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Upfront</th>
+        <th>Trail High</th>
+        <th>Trail Low</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData">
+        <td>{{ row.attributes.code}}</td>
+        <td>{{ row.attributes.name }}</td>
+        <td>{{row.attributes.type[0].toUpperCase() + row.attributes.type.slice(1).toLowerCase()}}</td>
+        <td>%{{ row.attributes.upfont_commission }}</td>
+        <td>%{{ row.attributes.high_trail_commission }}</td>
+        <td>%{{ row.attributes.low_trail_commission }}</td>
+        <td>{{ row.attributes.balance_multiplier }}</td>
+        <td>  <input 
+          type="checkbox" 
+          [attr.checked]="row.attributes.is_hidden ? true : null"
+          disabled
+        >
+        </td>
+        <td><input 
+          type="checkbox" 
+          [attr.checked]="row.attributes.is_active ? true : null"
+          disabled
+        > 
+      </td>
+        <td><p><i class="fa fa-pencil"></i> Edit</p></td>
+      </tr>
+    </tbody>
+  </table>

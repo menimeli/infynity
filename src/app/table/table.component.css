@@ -1,0 +1,38 @@
+
+.table {
+  width: 100%;
+  padding: 40px;
+  border-spacing: 0px;
+  color: grey;
+  table-layout: fixed;
+}
+
+.table th, .table td {
+  padding: 8px;
+  text-align: left;
+  height: 40px;
+}
+
+.table th {
+  color: grey;
+}
+
+.table tbody tr:nth-child(odd) {
+  background: rgb(237, 237, 237);
+}
+
+.set-table {
+  height: 200px;
+  width: 100%;
+}
+
+thead:nth-child(1) {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+thead:nth-child(2) {
+  position: sticky;
+  top: 48px;
+  background-color: white;
+}
